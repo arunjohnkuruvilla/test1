@@ -48,7 +48,7 @@ def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 	size_eight = 0
 
 	for x in xrange(6,9):
-		if x == 6:																# Strings of length 6
+		'''if x == 6:																# Strings of length 6
 			if size_six == 0:
 				size_six = 1
 				print "Loading strings of length 6..."
@@ -63,7 +63,7 @@ def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 									if(check_result[0]):
 										print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 										results[check_result[1]] = check_result[2]
-									#keywords.append(string)
+									#keywords.append(string)'''
 		if x == 7:																# Strings of length 6
 			if size_seven == 0:
 				size_seven = 1
