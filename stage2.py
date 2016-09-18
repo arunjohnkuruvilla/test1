@@ -32,7 +32,11 @@ def check(keyword, check_list):
 		result.append(0)
 	return result
 
-def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME):
+def print_out(OUTPUT_FILENAME, PASSWORD, HASH):
+	out_file = open(OUTPUT_FILENAME, "a")
+	out_file.write("%s : %s" % (PASSWORD, HASH))
+
+def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 	data = build_data(HASH_FILENAME)
 	keywords = []
 	chars = characters(CHARACTERS_FILENAME)
@@ -57,6 +61,7 @@ def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME):
 									string = char1 + char2 + char3 + char4 + char5 + char6
 									check_result = check(string, data)
 									if(check_result[0]):
+										print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 										results[check_result[1]] = check_result[2]
 									#keywords.append(string)
 		if x == 7:																# Strings of length 6
@@ -74,6 +79,7 @@ def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME):
 										string = char1 + char2 + char3 + char4 + char5 + char6 + char7
 										check_result = check(string, data)
 										if(check_result[0]):
+											print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 											results[check_result[1]] = check_result[2]
 		if x == 8:																# Strings of length 6
 			if size_eight == 0:
@@ -91,6 +97,7 @@ def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME):
 											string = char1 + char2 + char3 + char4 + char5 + char6 + char7 + char8
 											check_result = check(string, data)
 											if(check_result[0]):
+												print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 												results[check_result[1]] = check_result[2]
 	print "Completed strings of length 8."
 	return results
