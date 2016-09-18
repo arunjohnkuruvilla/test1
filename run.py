@@ -3,8 +3,13 @@ import sys
 import md5
 import time
 
+HASH_FILENAME = "eHarmony.txt"
+CHARACTERS_FILENAME = "characters.txt"
+OUTPUT_FILENAME = "out.txt"
+
 def characters():
-	char_file = open('characters.txt', 'r')
+	global CHARACTERS_FILENAME
+	char_file = open(CHARACTERS_FILENAME, 'r')
 	chars = []
 	for line in char_file:
 		chars.append(line[:-1])
@@ -25,7 +30,8 @@ def check(keyword, check_list):
 	return result
 
 def make_keywords():
-	data = dump.build_data(sys.argv[1])
+	global HASH_FILENAME
+	data = dump.build_data(HASH_FILENAME)
 	keywords = []
 	chars = characters()
 
@@ -123,12 +129,21 @@ def make_keywords():
 	return results
 
 if __name__ == '__main__':
+	global HASH_FILENAME
+	global OUTPUT_FILENAME
+	if len(sys.argv) == 0 :
+		print "Hash File not provided. Using Default Hash File"
 	start = time.time()
 	results = make_keywords()
 	end = time.time()
 	print (end - start)
+
+	out_file = open(OUTPUT_FILENAME, "a")
+
 	print "Results:"
 	for key, value in results.iteritems():
 		print key, value
+		out_file.write("%s : %s" % (key, value))
+
 	#for keyword in keywords:
 
