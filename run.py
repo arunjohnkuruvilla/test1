@@ -1,11 +1,15 @@
-import dump
+#! /usr/bin/env python
+
 import sys
 import md5
 import time
 
-HASH_FILENAME = "eHarmony.txt"
-CHARACTERS_FILENAME = "characters.txt"
-OUTPUT_FILENAME = "out.txt"
+def build_data(filename):
+	dump_file = open(filename, "r")
+	data = {}
+	for line in dump_file:
+		data[line[:-1]] = ""
+	return data
 
 def characters():
 	global CHARACTERS_FILENAME
@@ -31,7 +35,7 @@ def check(keyword, check_list):
 
 def make_keywords():
 	global HASH_FILENAME
-	data = dump.build_data(HASH_FILENAME)
+	data = build_data(HASH_FILENAME)
 	keywords = []
 	chars = characters()
 
@@ -44,7 +48,7 @@ def make_keywords():
 	size_five = 0
 	size_six = 0
 
-	for x in xrange(1,7):
+	for x in xrange(1,6):
 		if x == 1:																# Strings of length 1
 			if size_one == 0:
 				size_one = 1
@@ -129,14 +133,28 @@ def make_keywords():
 	return results
 
 if __name__ == '__main__':
-	global HASH_FILENAME
-	global OUTPUT_FILENAME
-	if len(sys.argv) == 0 :
-		print "Hash File not provided. Using Default Hash File"
-	start = time.time()
-	results = make_keywords()
-	end = time.time()
-	print (end - start)
+
+	HASH_FILENAME = "eHarmony.txt"
+	CHARACTERS_FILENAME = "characters.txt"
+	OUTPUT_FILENAME = "out.txt"
+	STAGE_NO = 1
+	
+	results = {}
+
+	if len(sys.argv) <= 2 :
+		print "No arguments provided. Using default values"
+	else:
+		HASH_FILENAME = sys.argv[1]
+		STAGE_NO = int(sys.argv[2])
+		OUTPUT_FILENAME = sys.argv[3]
+
+	if(STAGE_NO == 1):
+		start = time.time()
+
+		results = make_keywords()
+
+		end = time.time()
+		print "Brute-Force Strings of length 1 - 5 took: " + str(end - start)
 
 	out_file = open(OUTPUT_FILENAME, "a")
 
