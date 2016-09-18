@@ -15,7 +15,8 @@ def characters(CHARACTERS_FILENAME):
 	char_file = open(CHARACTERS_FILENAME, 'r')
 	chars = []
 	for line in char_file:
-		chars.append(line[:-1])
+		if(line[-1] != ''):
+			chars.append(line[:-1])
 	return chars
 
 def check(keyword, check_list):
@@ -48,7 +49,7 @@ def make_keywords(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 	size_eight = 0
 
 	for x in xrange(6,9):
-		'''if x == 6:																# Strings of length 6
+		if x == 6:																# Strings of length 6
 			if size_six == 0:
 				size_six = 1
 				print "Loading strings of length 6..."

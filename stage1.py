@@ -15,7 +15,8 @@ def characters(CHARACTERS_FILENAME):
 	char_file = open(CHARACTERS_FILENAME, 'r')
 	chars = []
 	for line in char_file:
-		chars.append(line[:-1])
+		if(line[-1] != ''):
+			chars.append(line[:-1])
 	return chars
 
 def check(keyword, check_list):
