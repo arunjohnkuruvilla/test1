@@ -26,7 +26,7 @@ if __name__ == '__main__':
 	if(STAGE_NO == 1):
 		start = time.time()
 
-		results = stage1.make_keywords(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+		results = stage1.make_keywords_1(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
 
 		end = time.time()
 		print "Brute-Force Strings of length 1 - 5 took: " + str(end - start)
@@ -34,7 +34,23 @@ if __name__ == '__main__':
 	if(STAGE_NO == 2):
 		start = time.time()
 
-		results = stage2.make_keywords(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+		results = stage1.make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+
+		end = time.time()
+		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
+
+	if(STAGE_NO == 3):
+		start = time.time()
+
+		results = stage2.make_keywords_1(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+
+		end = time.time()
+		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
+
+	if(STAGE_NO == 4):
+		start = time.time()
+
+		results = stage2.make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
