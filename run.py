@@ -40,7 +40,7 @@ if __name__ == '__main__':
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 3):
-		PASSWORD_FILE = argv[5]
+		PASSWORD_FILE = sys.argv[5]
 
 		start = time.time()
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 4):
-		PASSWORD_FILE = argv[5]
+		PASSWORD_FILE = sys.argv[5]
 		
 		start = time.time()
 
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 5):
-		PASSWORD_FILE = argv[5]
+		PASSWORD_FILE = sys.argv[5]
 		
 		start = time.time()
 
@@ -70,7 +70,7 @@ if __name__ == '__main__':
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 6):
-		PASSWORD_FILE = argv[5]
+		PASSWORD_FILE = sys.argv[5]
 		
 		start = time.time()
 
