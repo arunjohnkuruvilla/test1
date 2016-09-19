@@ -59,5 +59,29 @@ if __name__ == '__main__':
 	for key, value in results.iteritems():
 		print key, value
 
+	if(STAGE_NO == 5):
+		start = time.time()
+
+		results = stage2.make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+
+		end = time.time()
+		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
+
+	print "Results:"
+	for key, value in results.iteritems():
+		print key, value
+
+	if(STAGE_NO == 6):
+		start = time.time()
+
+		results = stage2.make_keywords_4(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+
+		end = time.time()
+		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
+
+	print "Results:"
+	for key, value in results.iteritems():
+		print key, value
+
 	#for keyword in keywords:
 
