@@ -328,39 +328,6 @@ def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 								if(check_result[0]):
 									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 									results[check_result[1]] = check_result[2]
-		'''if x == 5:																# Strings of length 5	
-			if size_five == 0:
-				size_five = 1
-				print "Completed strings of length 4."
-				print "Loading strings of length 5..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								string = char1 + char2 + char3 + char4 + char5
-								check_result = check(string, data)
-								if(check_result[0]):
-									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-									results[check_result[1]] = check_result[2]
-								#keywords.append(string)
-		if x == 6:																# Strings of length 6
-			if size_six == 0:
-				size_six = 1
-				print "Completed strings of length 5."
-				print "Loading strings of length 6..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								for char6 in chars:
-									string = char1 + char2 + char3 + char4 + char5 + char6
-									check_result = check(string, data)
-									if(check_result[0]):
-										print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-										results[check_result[1]] = check_result[2]
-									#keywords.append(string)'''
 	print "Completed strings of length 4."
 	return results
 

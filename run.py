@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
 		end = time.time()
 		print "Brute-Force Strings of length 1 - 5 took: " + str(end - start)
-
+################################
 	if(STAGE_NO == 2):
 		start = time.time()
 
@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
-
+################################
 	if(STAGE_NO == 3):
 		start = time.time()
 
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
-
+################################
 	if(STAGE_NO == 4):
 		start = time.time()
 
@@ -54,11 +54,7 @@ if __name__ == '__main__':
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
-
-	print "Results:"
-	for key, value in results.iteritems():
-		print key, value
-
+################################
 	if(STAGE_NO == 5):
 		start = time.time()
 
@@ -66,11 +62,7 @@ if __name__ == '__main__':
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
-
-	print "Results:"
-	for key, value in results.iteritems():
-		print key, value
-
+################################
 	if(STAGE_NO == 6):
 		start = time.time()
 
