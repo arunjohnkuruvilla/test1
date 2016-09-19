@@ -18,8 +18,8 @@ def characters(CHARACTERS_FILENAME):
 		chars.append(line[:-1])
 	return chars
 
-def common_passwords():
-	password_file = open("password_1000.txt")
+def common_passwords(PASSWORD_FILE):
+	password_file = open(PASSWORD_FILE, 'r')
 	passwords = []
 	for line in password_file:
 		line = line[:-1]
@@ -46,12 +46,12 @@ def print_out(OUTPUT_FILENAME, PASSWORD, HASH):
 	out_file.write("%s : %s\n" % (PASSWORD, HASH))
 	out_file.close()
 
-def make_keywords_1(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
+def make_keywords_1(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE):
 	data = build_data(HASH_FILENAME)
 	keywords = []
 	chars = characters(CHARACTERS_FILENAME)
 
-	passwords = common_passwords()
+	passwords = common_passwords(PASSWORD_FILE)
 
 	results = {}
 
@@ -101,58 +101,9 @@ def make_keywords_1(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 							if(check_result[0]):
 								print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 								results[check_result[1]] = check_result[2]
-		'''if x == 4:																# Strings of length 4
-			if size_four == 0:
-				size_four = 1
-				print "Completed strings of length 3."
-				print "Trying strings of length 4..."
-			for password in passwords:
-				for char1 in chars:
-					for char2 in chars:
-						for char3 in chars:
-							for char4 in chars:
-								string = password + char1 + char2 + char3 + char4
-								check_result = check(string, data)
-								if(check_result[0]):
-									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-									results[check_result[1]] = check_result[2]
-		if x == 5:																# Strings of length 5	
-			if size_five == 0:
-				size_five = 1
-				print "Completed strings of length 4."
-				print "Loading strings of length 5..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								string = char1 + char2 + char3 + char4 + char5
-								check_result = check(string, data)
-								if(check_result[0]):
-									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-									results[check_result[1]] = check_result[2]
-								#keywords.append(string)
-		if x == 6:																# Strings of length 6
-			if size_six == 0:
-				size_six = 1
-				print "Completed strings of length 5."
-				print "Loading strings of length 6..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								for char6 in chars:
-									string = char1 + char2 + char3 + char4 + char5 + char6
-									check_result = check(string, data)
-									if(check_result[0]):
-										print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-										results[check_result[1]] = check_result[2]
-									#keywords.append(string)'''
-	print "Completed strings of length 4."
 	return results
 
-def make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
+def make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE):
 	data = build_data(HASH_FILENAME)
 	keywords = []
 	chars = characters(CHARACTERS_FILENAME)
@@ -207,58 +158,9 @@ def make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 							if(check_result[0]):
 								print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 								results[check_result[1]] = check_result[2]
-		'''if x == 4:																# Strings of length 4
-			if size_four == 0:
-				size_four = 1
-				print "Completed strings of length 3."
-				print "Trying strings of length 4..."
-			for password in passwords:
-				for char1 in chars:
-					for char2 in chars:
-						for char3 in chars:
-							for char4 in chars:
-								string = password + char1 + char2 + char3 + char4
-								check_result = check(string, data)
-								if(check_result[0]):
-									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-									results[check_result[1]] = check_result[2]
-		if x == 5:																# Strings of length 5	
-			if size_five == 0:
-				size_five = 1
-				print "Completed strings of length 4."
-				print "Loading strings of length 5..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								string = char1 + char2 + char3 + char4 + char5
-								check_result = check(string, data)
-								if(check_result[0]):
-									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-									results[check_result[1]] = check_result[2]
-								#keywords.append(string)
-		if x == 6:																# Strings of length 6
-			if size_six == 0:
-				size_six = 1
-				print "Completed strings of length 5."
-				print "Loading strings of length 6..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								for char6 in chars:
-									string = char1 + char2 + char3 + char4 + char5 + char6
-									check_result = check(string, data)
-									if(check_result[0]):
-										print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-										results[check_result[1]] = check_result[2]
-									#keywords.append(string)'''
-	print "Completed strings of length 4."
 	return results
 
-def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
+def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE):
 	data = build_data(HASH_FILENAME)
 	keywords = []
 	chars = characters(CHARACTERS_FILENAME)
@@ -331,7 +233,7 @@ def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 	print "Completed strings of length 4."
 	return results
 
-def make_keywords_4(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
+def make_keywords_4(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE):
 	data = build_data(HASH_FILENAME)
 	keywords = []
 	chars = characters(CHARACTERS_FILENAME)
@@ -401,38 +303,5 @@ def make_keywords_4(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME):
 								if(check_result[0]):
 									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 									results[check_result[1]] = check_result[2]
-		'''if x == 5:																# Strings of length 5	
-			if size_five == 0:
-				size_five = 1
-				print "Completed strings of length 4."
-				print "Loading strings of length 5..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								string = char1 + char2 + char3 + char4 + char5
-								check_result = check(string, data)
-								if(check_result[0]):
-									print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-									results[check_result[1]] = check_result[2]
-								#keywords.append(string)
-		if x == 6:																# Strings of length 6
-			if size_six == 0:
-				size_six = 1
-				print "Completed strings of length 5."
-				print "Loading strings of length 6..."
-			for char1 in chars:
-				for char2 in chars:
-					for char3 in chars:
-						for char4 in chars:
-							for char5 in chars:
-								for char6 in chars:
-									string = char1 + char2 + char3 + char4 + char5 + char6
-									check_result = check(string, data)
-									if(check_result[0]):
-										print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
-										results[check_result[1]] = check_result[2]
-									#keywords.append(string)'''
 	print "Completed strings of length 4."
 	return results

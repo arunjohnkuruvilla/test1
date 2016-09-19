@@ -40,33 +40,41 @@ if __name__ == '__main__':
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 3):
+		PASSWORD_FILE = argv[5]
+
 		start = time.time()
 
-		results = stage2.make_keywords_1(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+		results = stage2.make_keywords_1(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE)
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 4):
+		PASSWORD_FILE = argv[5]
+		
 		start = time.time()
 
-		results = stage2.make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+		results = stage2.make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE)
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 5):
+		PASSWORD_FILE = argv[5]
+		
 		start = time.time()
 
-		results = stage2.make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+		results = stage2.make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE)
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 ################################
 	if(STAGE_NO == 6):
+		PASSWORD_FILE = argv[5]
+		
 		start = time.time()
 
-		results = stage2.make_keywords_4(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+		results = stage2.make_keywords_4(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE)
 
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
