@@ -165,7 +165,7 @@ def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWOR
 	keywords = []
 	chars = characters(CHARACTERS_FILENAME)
 
-	passwords = common_passwords()
+	passwords = common_passwords(PASSWORD_FILE)
 
 	results = {}
 
@@ -238,7 +238,7 @@ def make_keywords_4(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWOR
 	keywords = []
 	chars = characters(CHARACTERS_FILENAME)
 
-	passwords = common_passwords()
+	passwords = common_passwords(PASSWORD_FILE)
 
 	results = {}
 
