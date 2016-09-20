@@ -79,6 +79,17 @@ if __name__ == '__main__':
 		end = time.time()
 		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
 
+################################
+	if(STAGE_NO == 7):
+		
+		start = time.time()
+
+		results = stage1.make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME)
+
+		end = time.time()
+		print "Brute-Force Strings of length 6 - 8 took: " + str(end - start)
+
+
 	print "Results:"
 	for key, value in results.iteritems():
 		print key, value
