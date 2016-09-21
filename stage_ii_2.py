@@ -178,9 +178,6 @@ def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWOR
 
 	for x in xrange(1,6):
 		if x == 1:																# Strings of length 1
-			if size_one == 0:
-				size_one = 1
-				print "Trying strings of length 1..."
 			for password in passwords:
 				for char1 in chars:
 					string = password + char1
@@ -189,10 +186,6 @@ def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWOR
 						print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 						results[check_result[1]] = check_result[2]
 		if x == 2:																# Strings of length 2
-			if size_two == 0:
-				size_two = 1
-				print "Completed strings of length 1."
-				print "Trying strings of length 2..."
 			for password in passwords:
 				for char1 in chars:
 					for char2 in chars:
@@ -202,10 +195,6 @@ def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWOR
 							print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 							results[check_result[1]] = check_result[2]
 		if x == 3:																# Strings of length 3
-			if size_three == 0:
-				size_three = 1
-				print "Completed strings of length 2."
-				print "Trying strings of length 3..."
 			for password in passwords:	
 				for char1 in chars:
 					for char2 in chars:
@@ -216,10 +205,6 @@ def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWOR
 								print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
 								results[check_result[1]] = check_result[2]
 		if x == 4:																# Strings of length 4
-			if size_four == 0:
-				size_four = 1
-				print "Completed strings of length 3."
-				print "Trying strings of length 4..."
 			for password in passwords:
 				for char1 in chars:
 					for char2 in chars:
