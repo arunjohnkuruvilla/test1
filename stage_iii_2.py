@@ -147,6 +147,45 @@ def make_keywords_2(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWOR
 									results[check_result[1]] = check_result[2]
 	return results
 
+def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE):
+	data = build_data(HASH_FILENAME)
+	keywords = []
+	chars = characters(CHARACTERS_FILENAME)
+
+	passwords = common_passwords(PASSWORD_FILE)
+
+	results = {}
+
+	size_one = 0
+	size_two = 0
+	size_three = 0
+	size_four = 0
+	size_five = 0
+	size_six = 0
+
+	for x in xrange(1,6):
+		if x == 1:																# Strings of length 1
+			for password in passwords:
+				for x in xrange(0,100):
+					for char1 in chars:
+						string = str(format(x, '02d')) + char1 + password
+						check_result = check(string, data)
+						if(check_result[0]):
+							print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
+							results[check_result[1]] = check_result[2]
+
+		if x == 2:																# Strings of length 2
+			for password in passwords:
+				for x in xrange(0,100):
+					for char1 in chars:
+						for char2 in chars:
+							string = str(format(x, '02d')) + char1 + char2 + password
+							check_result = check(string, data)
+							if(check_result[0]):
+								print_out(OUTPUT_FILENAME, check_result[1], check_result[2])
+								results[check_result[1]] = check_result[2]
+	return results
+
 '''def make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE):
 	data = build_data(HASH_FILENAME)
 	keywords = []
