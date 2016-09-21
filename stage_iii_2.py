@@ -24,8 +24,8 @@ def common_passwords(PASSWORD_FILE):
 	passwords = []
 	for line in password_file:
 		line = line[:-1]
-		passwords.append(line)
-		passwords.append(line.upper())
+		passwords.append(line.lower())
+		#passwords.append(line.upper())
 	return passwords
 
 def check(keyword, check_list):
