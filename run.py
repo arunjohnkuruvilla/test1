@@ -148,6 +148,10 @@ if __name__ == '__main__':
 		end = time.time()
 		print "Brute-Force Strings of length 1 - 4 took: " + str(end - start)
 
+	if(STAGE_NO == 27):
+		PASSWORD_FILE = sys.argv[5]
+		results = stage_iii_2.make_keywords_3(HASH_FILENAME, CHARACTERS_FILENAME, OUTPUT_FILENAME, PASSWORD_FILE)
+
 
 	print "Results:"
 	for key, value in results.iteritems():
